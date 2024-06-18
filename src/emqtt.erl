@@ -171,7 +171,7 @@
                 | {properties, properties()}
                 | {nst,  binary()}).
 
--type(maybe(T) :: undefined | T).
+-type('maybe'(T) :: undefined | T).
 -type(topic() :: binary()).
 -type(payload() :: iodata()).
 -type(packet_id() :: 0..16#FFFF).
@@ -223,12 +223,12 @@
           bridge_mode     :: boolean(),
           clientid        :: binary(),
           clean_start     :: boolean(),
-          username        :: maybe(binary()),
+          username        :: 'maybe'(binary()),
           password        :: function(),
           proto_ver       :: version(),
           proto_name      :: iodata(),
           keepalive       :: non_neg_integer(),
-          keepalive_timer :: maybe(timer:tref()),
+          keepalive_timer :: 'maybe'(timer:tref()),
           force_ping      :: boolean(),
           paused          :: boolean(),
           will_flag       :: boolean(),
@@ -242,9 +242,9 @@
           awaiting_rel    :: map(),
           auto_ack        :: boolean(),
           ack_timeout     :: pos_integer(),
-          ack_timer       :: maybe(timer:tref()),
+          ack_timer       :: 'maybe'(timer:tref()),
           retry_interval  :: pos_integer(),
-          retry_timer     :: maybe(timer:tref()),
+          retry_timer     :: 'maybe'(timer:tref()),
           session_present :: boolean(),
           last_packet_id  :: packet_id(),
           low_mem         :: boolean(),
